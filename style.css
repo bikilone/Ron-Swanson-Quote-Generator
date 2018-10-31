@@ -25,6 +25,19 @@ button:hover {
     animation: buttonHover 0.3s forwards;
 }
 
+button:focus {
+    outline: none;
+}
+
+p {
+    margin-top: 40px;
+    font-size: 30px;
+}
+
+h2 {
+    margin-bottom: 40px;
+}
+
 @keyframes buttonHover {
     100% {
         background: darkgreen;

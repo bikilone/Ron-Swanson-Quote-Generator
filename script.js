@@ -1,6 +1,8 @@
 var url = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
 var button1 = document.getElementById("XHR");
 var button2 = document.getElementById("Fetch");
+var button3 = $("#jQuery");
+var button4 = document.getElementById("Axios");
 var p = document.getElementById("text");
 
 // xmlhttp
@@ -15,8 +17,6 @@ function xml() {
     XHR.open("GET", url);
     XHR.send()
 }
-
-button1.addEventListener("click", xml)
 
 // append dom
 
@@ -40,4 +40,35 @@ function fetching() {
         });
 }
 
+// fetching with jQuery
+
+function fetchingWithjQuery() {
+    $.ajax(url)
+    .done(function(data){
+        $("p").html(data);
+    })
+}
+
+// fetchin with axios
+
+function fetchingWithAxios() {
+    axios.get(url)
+    .then(function(res) {
+       appendDOM(res.data)
+    })
+    .catch(function(err) {
+        if (err.response) {
+            console.log("Problem with response");
+        } else if (err.request) {
+            console.log("Problem with request");
+        } else {
+            console.log(err.message)
+        }
+    })
+}
+
+
+button1.addEventListener("click", xml);
 button2.addEventListener("click", fetching);
+button3.click(fetchingWithjQuery);
+button4.addEventListener("click", fetchingWithAxios);
