@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 90%;
+}
+
+button {
+    width: 100px;
+    border: 2px solid darkgreen;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+    color: darkgreen;
+}
+
+button:hover {
+    animation: buttonHover 0.3s forwards;
+}
+
+@keyframes buttonHover {
+    100% {
+        background: darkgreen;
+        color: white;
+    }
+}
